@@ -1,0 +1,118 @@
+<!doctype html>
+<style>    
+    h1{
+        color:royalblue;
+        padding-bottom: 35px;
+        text-align: center;
+    }
+    h2{
+        text-align: center;
+    }
+    h3{
+        color:red;
+        text-align: center;
+    }
+    p{
+        text-align: center;
+    }
+    img {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 300px;
+        height: 500px;
+        object-fit: contain;
+        align-items: center;
+    }
+    div {
+        text-align: center;
+        margin-top:10px;
+    }
+    body {
+        display: flex;
+        align-items: left; justify-content: left;
+        min-height: 100vh;
+        background-image: url("https://plus.unsplash.com/premium_photo-1668037381973-52f0ca91c45e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2021&q=80");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .prog-wrap {
+      position: relative;
+      border: 1px solid #acb2d8;
+      background: rgba(255, 255, 255, 0.3);
+    }
+    .prog-wrap { height: 35px; }
+    * {
+      font-family: arial, sans-serif;
+      box-sizing: border-box;
+    }
+    #demoA { margin-top: 10px; }
+    #demoA input, #demoA button { padding: 10px; }
+    .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    .show {
+        display:block;
+        align-items: center;
+    }
+    .hide { 
+        display: none;
+    }
+    .widget-wrap {
+      min-width: 600px;
+      padding: 30px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.4);
+    }
+    #code-boxx {
+      font-weight: 600;
+      margin-top: 50px;
+    }
+    #code-boxx a {
+      display: inline-block;
+      padding: 5px;
+      text-decoration: none;
+      background: #b90a0a;
+      color: #fff;
+    }
+    #code-boxx , h1 { text-align: center; }
+</style>
+
+<body>
+    <div class = "centre">
+        <h1>Underbust Detection </h1>
+        
+        <h2 id="text">Select a .pcd file to find Underbust Height  !</h2>
+        <h3 id="msg" style="display:none" class="answer_list">Uploading.....Please wait !!</h3>
+
+        <form action="/uploadfile" enctype="multipart/form-data" method="post">
+            <dl>
+                <p>
+                    <input name="file" type="file" style=" padding: 60px;" multiple="true" autocomplete="off" required>
+                </p>
+            </dl>
+            <dl>
+                <p>
+                    <input id="btn-predict" type="submit" value="Submit" multiple="true" style="height: 30px;width: 100px; "onclick="showDiv()" ></p> 
+                </p>
+            </dl>
+        </form>
+
+    </div>
+</body>
+</html>
+<script>
+    // $('btn-predict').onclick(function(){
+    //     $("#text").hide()
+    // })
+    function showDiv() {
+        document.getElementById('msg').style.display = "block";
+        document.getElementById("text").classList.toggle("hide");
+    }
+</script>
